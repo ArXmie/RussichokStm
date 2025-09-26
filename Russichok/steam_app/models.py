@@ -7,6 +7,22 @@ class Author(models.Model):
     surname = models.CharField("Фамилия", max_length=15)
     birthday = models.DateField("Дата рождения")
     bio = models.TextField("Биография")
+    desc = models.TextField("Жив или умер")
+
+    class Meta:
+        verbose_name = "Автор"
+        verbose_name_plural = "Авторы"
+        ordering = ["surname", "name"]
+        indexes = [
+            models.Index(fields=["surname"])
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=("surname", "bio"),
+                condition=models.Q(desc="Жив"),
+                name = "unique_surname_bio"
+            )
+        ]
 
 class Publisher(models.Model):
     name = models.CharField("Название", unique=True)
