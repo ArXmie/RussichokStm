@@ -9,6 +9,9 @@ class Author(models.Model):
     bio = models.TextField("Биография")
     desc = models.TextField("Жив или умер")
 
+    def __str__(self):
+        return f"{self.surname} {self.name}"
+
     class Meta:
         verbose_name = "Автор"
         verbose_name_plural = "Авторы"
