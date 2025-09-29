@@ -1,36 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
-class Author(models.Model):
-    name = models.CharField(verbose_name='Имя автора', max_length=20)
-    surname = models.CharField("Фамилия", max_length=15)
-    birthday = models.DateField("Дата рождения")
-    bio = models.TextField("Биография")
-    desc = models.TextField("Жив или умер")
+class User(AbstractUser):
+    username = models.CharField(verbose_name='Никнейм', max_length=30)
+    email = models.EmailField("E-mail", unique=True)
+    avatar = models.ImageField("Аватарка", upload_to='avatars', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.surname} {self.name}"
-
-    class Meta:
-        verbose_name = "Автор"
-        verbose_name_plural = "Авторы"
-        ordering = ["surname", "name"]
-        indexes = [
-            models.Index(fields=["surname"])
-        ]
-        constraints = [
-            models.UniqueConstraint(
-                fields=("surname", "bio"),
-                condition=models.Q(desc="Жив"),
-                name = "unique_surname_bio"
-            )
-        ]
-
-class Publisher(models.Model):
-    name = models.CharField("Название", unique=True)
-
-class Book(models.Model):
-    title = models.CharField("Название", unique=True, blank=True)
-    id_publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
-    id_author = models.ManyToManyField(Author)
+        return self.username
+    
+class Genre(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
