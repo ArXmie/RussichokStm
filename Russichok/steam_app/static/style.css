@@ -2,5 +2,46 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    height: 66px;
+    background-color: #111111;
+}
+
+header img {
+    height: 55px;
+}
+
+.right_header {
+    display: flex;
+    flex: 0 0 500px;
+    height: 66px;
+    background-color: bisque;
+    
+}
+
+.right_header .nav-right_header {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.left_header {
+    flex: 0 0 150px;
+    height: 66px;
+    background-color: brown;
+}
+
+.nav-right_header {
+    flex: 1;
+    background-color: blueviolet;
+    height: 66px;
+}
+
+.list-nav {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 14px;
+    padding: 10px;
+    background-color: black;
 }
