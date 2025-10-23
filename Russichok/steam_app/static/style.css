@@ -1,19 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 66px;
+    height: 70px;
     background-color: #111111;
+    padding: 10px 20px 10px 20px;
 }
 
 header img {
-    height: 55px;
+    height: 75px;
 }
 
 .right_header {
     display: flex;
     flex: 0 0 500px;
-    height: 66px;
+    height: 70px;
     background-color: bisque;
     
 }
@@ -26,14 +32,14 @@ header img {
 
 .left_header {
     flex: 0 0 150px;
-    height: 66px;
+    height: 70px;
     background-color: brown;
 }
 
 .nav-right_header {
     flex: 1;
     background-color: blueviolet;
-    height: 66px;
+    height: 70px;
 }
 
 .list-nav {
