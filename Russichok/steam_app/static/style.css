@@ -47,7 +47,13 @@ header img {
     flex: 1;
     align-items: flex-end;
     justify-content: flex-start;
-    height: 14px;
-    padding: 10px;
+    min-height: 10%;
+    gap: 10px;
+    box-sizing: border-box;
     background-color: black;
+}
+
+.list-nav p {
+    color: white;
+    margin: 0;
 }
