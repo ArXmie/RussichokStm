@@ -1,6 +1,11 @@
+div p {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
+    background-color: #48606a;
 }
 
 header {
@@ -18,9 +23,8 @@ header img {
 
 .right_header {
     display: flex;
-    flex: 0 0 500px;
-    height: 70px;
-    background-color: bisque;
+    min-width: 500px;
+    height: 89px;
     
 }
 
@@ -31,15 +35,24 @@ header img {
 
 
 .left_header {
+    display: flex;
     flex: 0 0 150px;
     height: 70px;
-    background-color: brown;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
+
+.left_header p{
+    color: #5d5d5f;
+    margin: 0;
+    font-size: 13px;
+    padding-right: 50px;
+}
+
 
 .nav-right_header {
     flex: 1;
-    background-color: blueviolet;
-    height: 70px;
+    height: 80px;
 }
 
 .list-nav {
@@ -50,10 +63,47 @@ header img {
     min-height: 10%;
     gap: 10px;
     box-sizing: border-box;
-    background-color: black;
 }
 
 .list-nav p {
-    color: white;
+    color: #5d5d5f;
     margin: 0;
+    font-size: 13px;
 }
+
+.list-nav .active {
+    color: white;
+}
+
+.list-nav a {
+    color: #5d5d5f;
+    margin: 0;
+    font-size: 13px;
+}
+
+.list-nav p:not(:last-child)::after {
+    content: "|";
+    color: #5d5d5f;
+    margin-left: 10px;
+  }
+
+.list-nav a:not(:last-child)::after {
+    content: "|";
+    color: #5d5d5f;
+    margin-left: 10px;
+  }
+
+.grid-layout {
+    display: grid;
+    grid-template-areas: "community-header community-header"
+        "poster-left login-right"
+        "community-footer community-footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 10px;
+    background-color: black;
+    min-height: 700px;
+    width: 878px;
+}
+
+
