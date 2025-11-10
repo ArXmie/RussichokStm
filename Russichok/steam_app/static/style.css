@@ -93,17 +93,78 @@ header img {
     margin-left: 10px;
   }
 
+main {
+    padding-top: 50px;
+}
+
 .grid-layout {
     display: grid;
-    grid-template-areas: "community-header community-header"
+    grid-template-areas: 
+        "community-header community-header"
         "poster-left login-right"
         "community-footer community-footer";
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 151px 498px 46px;
     padding: 10px;
     background-color: black;
     min-height: 700px;
     width: 878px;
+    margin: 0 auto;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.community-header {
+    grid-area: community-header;
+    padding: 20px;
+}
+
+.community-stats {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.community-stats p {
+    font-size: 16px;
+}
+
+
+.community-stats p:not(:last-child)::after {
+    content: "|";
+    color: #5d5d5f;
+    margin: 0 10px 0 10px;
+  }
+
+.community-header h1 {
+    padding: 0 0 5px 0;
+}
+
+.community-header p {
+    max-width: 620px;
+    font-size: 14px;
+}
+
+.poster-left {
+    grid-area: poster-left;
+}
+
+.poster-right {
+    grid-area: poster-right;
+}
+
+.community-footer {
+    grid-area: community-footer;
 }
 
 
